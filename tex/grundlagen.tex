@@ -1,0 +1,37 @@
+\section{Grundlagen}
+\label{chapter:grundlagen}
+
+\subsection{Microservices} 
+\label{chapter:microservices}
+Bei Microservices handelt es sich um ein Architekturmuster zur Modularisierung von Software mit dem Ziel einer besseren Skalierbarkeit. Um die Modularisierung sicherzustellen, werden die Module als unabhängige Services implementiert. Diese Services kommunizieren über das Netzwerk über klar definierte Schnittstellen miteinander.
+
+Charakteristisch für Microservices ist die Eigenständigkeit: Jeder Service läuft als eigener Prozess und lässt sich einzeln installieren und starten.
+\begin{quote}
+ Die Idee der Microservices "`[...] basiert auf der UNIX-Philosophie. Sie lässt sich auf drei Aspekte reduzieren:
+\begin{itemize}
+ \item Ein Programm soll nur eine Aufgabe erledigen, und das soll es gut machen.
+ \item Programme sollen zusammenarbeiten können.
+ \item Nutze eine universelle Schnittstelle. In UNIX sind das Textströme."'
+\end{itemize}
+\cite[2]{wolff_microservices:_2015}
+\end{quote}
+
+Für den Begriff Microservices gibt es keine feste Definition. Wolff nennt folgende Kriterien: 
+\begin{itemize}
+ \item Modularisierungskonzept zum Aufteilen großer Software-Systeme
+ \item Unabhängiges Deployment
+ \item Verwendung verschiedener Technologien (z.B. Programmiersprachen) möglich
+ \item Separate Datenhaltung, beispielsweise Nutzung separater Datenbanksysteme oder konsequente Trennung der Datennutzung innerhalb desselben Datenbanksystems
+ \item Eigenständige Prozesse oder virtuelle Maschinen
+ \item Kommunikation über das Netzwerk
+\end{itemize}
+\cite[2]{wolff_microservices:_2015}
+
+Auffällig ist, dass bei dieser Definition die Größe des Services nicht betrachtet wird, obwohl der Name vermuten lässt, dass es sich um einen kleinen Service handelt. 
+Es gibt verschiedene Faktoren, die die ideale Größe eines Microservices beeinflussen. Modularisierung ist ein Ansatz, um die Komplexität der Software gering zu halten. Kleine Services sind weniger komplex, dadurch leichter zu verstehen und somit leichter zu ändern. Jedoch muss man dabei bedenken, dass Microservices in eigenständigen Prozessen laufen, so dass eine verteilte Kommunikation zwischen diesen nötig wird. Diese Kommunikation benötigt zusätzliche Zeit und ist potenziell fehleranfälliger im Vergleich zu einer Kommunikation innerhalb der Anwendung. Beim Design von Microservices gilt es, beide Seiten zu beachten und eine gute Größe zu wählen. Wolff rät zur Entwicklung größerer Services. \cite[31ff.]{wolff_microservices:_2015} 
+Eugene Kalenkovich kritisiert dagegen schon den Begriff Microservices:
+\begin{quote}"`All this hype about microservices makes me sad. And not about the concept, but about the name. As I wrote before, “micro” in “microservices” means absolutely nothing. What is worse, it confuses everybody. Again and again I see people focusing on “micro” and falling into nanoservices trap."' \end{quote} \cite{kalenkovich_can_2014}
+
+Auch Roland Kuhn findet den Begriff aufgrund seiner Mehrdeutigkeit unpassend und schlägt stattdessen den Begriff Uniservice vor. \cite{kuhn_microservice_2014}
+Im Diskurs über Servicearchitekturen findet man ebenfalls die Begriffe "`decoupled services"' und "`SOA done right"'. \cite{white_microservices_2015} 
+

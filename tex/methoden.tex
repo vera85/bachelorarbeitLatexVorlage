@@ -1,0 +1,25 @@
+\section{Methoden}
+\label{chapter:methoden}
+
+\subsection{Programmiertechniken}
+.......
+
+\subsubsection{Logging mit MDC}
+log4j \footnote{\url{https://logging.apache.org/log4j}} ist ein Logging-Framework für Java. Es bietet mit dem Mapped Diagnostic Context, im Weiteren mit MDC abgekürzt, die Möglichkeit, Informationen zu loggen, ohne diese in die ausführende Methode hineinzugeben. Man kann beispielsweise zu Beginn einer Anfrage eine ID vergeben und diese als Feld an alle Log-Nachrichten bei der Verarbeitung der Anfrage einfügen, wie das Code-Beispiel in Listing \ref{lst:JavaMdc} zeigt.
+
+\begin{lstlisting}[
+  caption=Setzen eines Feldes für Log-Nachrichten mit MDC,
+  label=lst:JavaMdc,
+  language=Java,
+  float=htb]
+import org.apache.log4j.MDC;
+public class LogExample {
+    public void startRequest(String requestId) {
+        MDC.put("requestId", requestId);    
+        // process request....
+        MDC.remove("requestId);
+    }
+\end{lstlisting}
+
+Mit \textit{MDC.put} wird der Wert für das angegebene Feld, in diesem Beispiel \mbox{\textit{requestId}}, gespeichert und solange in allen Log-Nachrichten ausgegeben, bis es mit \textit{MDC.remove} wieder gelöscht wird. 
+ 

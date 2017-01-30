@@ -1,0 +1,105 @@
+\ProvidesPackage{mystyle}
+
+%\setlength{\evensidemargin}{-5pt}
+%\setlength{\oddsidemargin}{-5pt}
+%\setlength{\textwidth}{480pt}
+%\setlength{\topmargin}{-10pt}
+%\setlength{\textheight}{600pt}
+
+\usepackage[toc,page]{appendix}
+
+\usepackage{pslatex}
+\usepackage{psfrag}
+\usepackage[section]{placeins}
+\usepackage[xdvi,dvips]{epsfig}
+\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{colortbl}
+
+% TODO: print version: deactivate hyperref, activate url
+\usepackage{url} % /url{ }
+\usepackage{hyperref} % /url mit Links in PDF
+
+%\usepackage{german}
+\usepackage[ngerman]{babel}
+\RequirePackage[ngerman=ngerman-x-latest]{hyphsubst}
+\usepackage{listings}
+\usepackage{amsmath,amssymb,amstext, amsthm}
+\usepackage{multirow}
+\usepackage{booktabs}
+\lstloadlanguages{XML}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{longtable}
+\usepackage[utf8]{inputenc} %Umlaute
+%\usepackage{fontspec}
+%\defaultfontfeatures{Mapping=text-text}
+%\setsansfont{Verdana} % TODO andere Schriftart
+%\renewcommand*{\familydefault}{\sfdefault}
+
+%\usepackage{babel}
+
+%% Load package with fixed language or flexible language:
+%\usepackage[annote,languagenames]{babelbib}[2003/04/21]
+%\usepackage[annote,languagenames,fixlanguage]{babelbib}[2003/04/21]
+
+%% force a fall-back language other than the document's language
+%\setbtxfallbacklanguage{ngerman}
+
+%% Einbindung von Grafiken mittels \includegraphics{datei} %%%%%%%%%%%%
+\usepackage{graphicx}
+
+\definecolor{hellgelb}{rgb}{1,1,0.9}
+\definecolor{hellgrau}{rgb}{0.8,0.8,0.8}
+
+\lstdefinestyle{mylststyle}{
+    emph={rdf:Description,rdf:about,xmlns},
+    emphstyle=\bfseries,
+    aboveskip=20pt,
+    belowskip=0pt,
+    basicstyle=\small\sffamily,    
+    frame=tb, %
+    showspaces=false, %
+    showstringspaces=false, %
+    numbers=left, %
+    numberstyle=\tiny, %
+    breaklines=true, %
+    captionpos=b%
+}
+
+
+
+\lstset{style=mylststyle}
+
+\pagestyle{headings}
+\unitlength 5mm %für \begin{picture} ... \end{picture}
+\linespread{1.5} % TODO an Schrift anpassen 
+\sloppy
+
+\usepackage[usenames,dvipsnames]{xcolor}
+% \hypersetup{
+%     pdftitle={Rankingverfahren für Textdokumente basierend auf Wissensbasen},    % title
+%     pdfauthor={Benjamin Großmann},     % author
+%     pdfsubject={Subject},   % subject of the document
+%     pdfcreator={Benjamin Großmann},   % creator of the document
+%     pdfproducer={Benjamin Großmann}, % producer of the document
+%     pdfkeywords={Information Retrieval} {Ranking} {Semantische Suche} {Ontologien}, % list of keywords
+%     pdfnewwindow=true,      % links in new window
+%     colorlinks=false,       % false: boxed links; true: colored links
+%     linkcolor=Sepia,          % color of internal links
+%     citecolor=blue,        % color of links to bibliography
+%     filecolor=Blue,      % color of file links
+%     urlcolor=Blue,          % color of external links
+%     pdfborder={0 0 0.5}
+% }
+
+% ------------------- Bibliography-Style --------------------
+% see http://en.wikibooks.org/wiki/LaTeX/More_Bibliographies#Basic_Citation_Commands
+
+\usepackage[square]{natbib}
+
+\renewcommand{\cite}{\citep}
+
+\setcounter{tocdepth}{3}  % = Aufnahme in das Inhaltsverzeichnis *
+\setcounter{secnumdepth}{3} %  = Nummerierung vertiefen *

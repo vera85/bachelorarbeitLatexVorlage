@@ -1,0 +1,53 @@
+\documentclass[a4paper,
+listof=totoc,
+bibliography=totoc
+]{scrartcl}
+%\documentclass[ngerman,12pt,onecolumn,twoside,titlepage,BCOR5mm,DIV12]{article}
+\usepackage[a4paper,left=3cm,right=5cm,top=5cm,bottom=4cm,bindingoffset=5mm]{geometry}
+
+
+\usepackage{mystyle}
+
+%%%%%%%% BEGIN DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\selectlanguage{ngerman}
+
+\include{tex/titelblatt}
+%\include{tex/zusammenfassung}
+
+%%%%%%%% TABLE OF CONTENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{tocdepth}{-1}
+\include{tex/vermerk}
+\setcounter{tocdepth}{2}
+\tableofcontents
+\pagebreak
+
+%\include{tex/erklaerung}
+
+\include{tex/einleitung}
+\include{tex/grundlagen}
+\include{tex/anforderungsanalyse}
+\include{tex/methoden}
+\include{tex/umsetzung}
+\include{tex/auswertung}
+\setcounter{secnumdepth}{0}
+\include{tex/abkuerzungsverzeichnis} 
+\pagebreak
+\listoffigures
+\listoftables
+\lstlistoflistings
+\pagebreak
+
+
+%%%%%%%% REFERENZEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\nocite*
+
+\bibliographystyle{plainnat} %abbrv
+\raggedright{
+\bibliography{Literatur/literatur.bib}}
+\pagebreak
+\include{tex/anhang}
+
+
+\end{document}
